@@ -1,0 +1,10 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="sap.ui.demo.walkthrough.controller.Start">
+		<HBox width="100%" alignContent="Center" alignItems="Center">
+	<Label text="Табельный номер:" width="140px" />
+	<Input id="idPernr" placeholder="Табельный номер" valueLiveUpdate="true" enabled="{/enabled}"/>
+	</HBox>
+	<Button text="Вывести личное дело"	press=".onPress"/>
+</mvc:View>

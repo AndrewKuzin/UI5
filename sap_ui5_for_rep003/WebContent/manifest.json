@@ -1,0 +1,94 @@
+{
+	"_version": "1.12.0",
+	"sap.app": {
+		"id": "sap.ui.demo.walkthrough",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+		
+			"rep003Source": {
+				"uri": "http://hrd1app.erp.rw:8001/sap/opu/odata/sap/ZGW_UI5_REP003_TEST_SRV_01",
+				"type": "OData",
+				"settings": {
+				  "odataVersion": "2.0"
+				}
+		  	}
+			
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "sap.ui.demo.walkthrough.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.60",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+		
+			"rep003": {
+				"dataSource": "rep003Source",
+				"settings": {
+						"metadataUrlParams": {
+							"sap-documentation": "heading"
+						},
+						"withCredentials": "true",
+						"headers": {
+							"AAAA": "12345"
+						}
+				}
+	  		}
+			
+		},
+		"resources": {
+			
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.demo.walkthrough.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"async": true
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "start",
+					"target": "start"
+				},
+				{
+					"pattern": "rep003/{pernr}",
+					"name": "rep003",
+					"target": "rep003"
+				}
+			],
+			"targets": {
+				"start": {
+					"viewId": "start",
+					"viewName": "Start"
+				},
+				"rep003": {
+					"viewId": "rep003",
+					"viewName": "Rep003"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,551 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="sap.ui.demo.walkthrough.controller.Rep003">
+	<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true">
+		<Label width="100%" textDirection="RTL" text="Сведения по табельному номеру {/Pernr} на {/Date}"/>
+		
+		<HBox width="100%" id="__hbox0">
+    		<items>
+				<Image src="{/PhotoUri}" />
+
+				<Table>
+				    <items>
+				        <ColumnListItem>
+				            <cells>
+				                <Text text="Дата приема:" />
+				                <Text text="{/HireDate}" />
+				            </cells>
+				        </ColumnListItem>
+				        <ColumnListItem>
+				            <cells>
+				                <Text text="{/PlansPre}" />
+				                <Text text="{/PlansTxt}" />
+				            </cells>
+				        </ColumnListItem>
+				        <ColumnListItem>
+				            <cells>
+				                <Text text="Группа/Категория:" />
+				                <Text text="{/PersgTxt}/{/PerskTxt}" />
+				            </cells>
+				        </ColumnListItem>
+				        <ColumnListItem>
+				            <cells>
+				                <Text text="Подразделение:" />
+				                <Text text="{/HierOrgeh}" />
+				            </cells>
+				        </ColumnListItem>
+				        <ColumnListItem>
+				            <cells>
+				                <Text text="Руководитель:" />
+				                <Text text="{/FioBoss}" />
+				            </cells>
+				        </ColumnListItem>
+				        <ColumnListItem>
+				            <cells>
+				                <Text text="Стаж на предприятии:" />
+				                <Text text="{/Zp73Text}" />
+				            </cells>
+				        </ColumnListItem>
+				        <ColumnListItem>
+				            <cells>
+				                <Text text="Стаж на БелЖД:" />
+				                <Text text="{/Zp74Text}"/>
+				            </cells>
+				        </ColumnListItem>
+				    </items>
+				    <columns>
+				        <Column />
+				        <Column />
+				    </columns>
+			    </Table>
+	    	</items>
+	    </HBox>
+	    
+	        
+		<Table fixedLayout="false">
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{/Nagradi}" />
+	                	<List
+				      		class="sapUiResponsiveMargin"
+				      		width="auto"
+				      		items="{/MainToMainNagr/results}" >
+		      				<items>
+		         				<ObjectListItem title="{AwdtpTxt}" />
+		      				</items>
+	   					</List>
+	   				</cells>
+	        	</ColumnListItem>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{/Nakazaniya}" />
+	                	<List
+				      		class="sapUiResponsiveMargin"
+				      		width="auto"
+				      		items="{/MainToMainNak/results}" >
+		      				<items>
+		         				<ObjectListItem	title="{AwdtpTxt}"/>
+		      				</items>
+	   					</List>
+	   				</cells>
+	        	</ColumnListItem>
+	        
+	    	</items>
+	    	<columns>
+		        <Column />
+		        <Column />
+	    	</columns>
+	    </Table>
+	        
+		<Table  fixedLayout="false">
+		    <items>
+		        <ColumnListItem>
+		            <cells>
+		                <Text text="Проживает:" />
+		                <Text text="{/City}" />
+		                <Text text="Дата рождения:" />
+		                <Text text="{/Gbdat}" />
+		           	</cells>
+		        </ColumnListItem>
+		        <ColumnListItem>
+		            <cells>
+		                <Text text="Член БРСМ:" />
+		                <Text text="{/BrsmMemberTxt}" />
+		                <Text text="Возраст:" />
+		                <Text text="{/AgeYears}    {/FamstTxt}" />
+		            </cells>
+		        </ColumnListItem>
+		        <ColumnListItem>
+		            <cells>
+		                <Text text="{/NatioTxt1}" />
+		                <Text text="{/NatioTxt2}" />
+		                <Text text="Кол-во детей:" />
+		                <Text text="{/Anzkd}	{/LargeFam}" />
+		            </cells>
+		        </ColumnListItem>
+		        <ColumnListItem>
+		            <cells>
+		                <Text text="Военнообязанный(ая):" />
+		                <Text text="{/VoenStatusTxt}" />
+		                <Text text="Образование:" />
+		                <Text text="{/EducLevel}" />
+		            </cells>
+		        </ColumnListItem>
+		        <ColumnListItem>
+		            <cells>
+		                <Text text="{/SbgruTxt1}" />
+		                <Text text="{/SbgruTxt2}" />
+		                <Text text="" />
+		                <Text text="{/Titel}" />
+		            </cells>
+		        </ColumnListItem>
+		    </items>
+		    <columns>
+		        <Column />
+		        <Column />
+		        <Column />
+		        <Column />
+		    </columns>
+	    </Table>
+	    
+	    <Table items="{/MainToMov/results}" fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Сведения по движению:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{Begda}" />
+	                	<Text text="{MassnTxt}" />
+	                	<Text text="{MassgTxt}" />
+	                	<Text text="{OrgehTxt}" />
+	                	<Text text="{PlansTxt}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Дата"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Вид движения"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Причина"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Место работы"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Штатная должность"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToAddr/results}" fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Адреса и телефоны:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{AnssaTxt}" />
+	                	<Text text="{Address}" />
+	                	<Text text="{Telnr}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Вид адреса"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Адрес"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Телефон"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToContr/results}" fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Трудовые договора:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{CttypTxt}" />
+	                	<Text text="{Ctnum}" />
+	                	<Text text="{Ctbeg}" />
+	                	<Text text="{Ctedt}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Вид договора"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Номер"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Действует с"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Действует по"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToFam/results}"  fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Члены семьи:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{FamsaTxt}" />
+	                	<Text text="{Fcnam}" />
+	                	<Text text="{Fgbdt}" />
+	                	<Text text="{AgeYears}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Вид родства"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="ФИО"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Дата рождения"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Возраст"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToEduc/results}"  fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Образование:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{EducTxt}" />
+	                	<Text text="{Insti}" />
+	                	<Text text="{Year}" />
+	                	<Text text="{Nameprofession}" />
+	                	<Text text="{Qualification}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Уровень"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Учебное заведение"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Год окончания "/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Специальность"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Квалификация"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToNagr/results}"  fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Награды и поощрения:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{AwdtpTxt}" />
+	                	<Text text="{Date}" />
+	                	<Text text="{MassgTxt}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Вид награды/поощрения"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Дата"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Ответственный за поощрение"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToNak/results}">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Взыскания:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{AwdtpTxt}" />
+	                	<Text text="{Date}" />
+	                	<Text text="{Povleksh}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Вид взыскания"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Дата"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Необеспечение безопасности движения поездов"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToDocs/results}" fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Документы:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{SubtyTxt}" />
+	                	<Text text="{Nbelpasp}" />
+	                	<Text text="{Datbg}" />
+	                	<Text text="{Passl}" />
+	                	<Text text="{Daten}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Вид"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Серия и номер"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Дата выдачи"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Кем выдан"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="Действует по"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	    
+	    <Table items="{/MainToStaj/results}"  fixedLayout="false">
+	    	<headerToolbar>
+				<Toolbar>
+					<Title text="Трудовая книжка:"/>
+				</Toolbar>
+			</headerToolbar>
+	    	<items>
+	        	<ColumnListItem>
+	            	<cells>
+	                	<Text text="{Deprt}" />
+	                	<Text text="{PositD} {PositP}" />
+	                	<Table fixedLayout="false" showSeparators="None">
+	                	<items>
+	                	<ColumnListItem>
+	            	<cells>
+	            	<Text text="{FullBegda}" />
+	                	<Text text="{FullEndda}" />
+	                	</cells>
+	                	</ColumnListItem>
+	                	</items>
+	                	<columns>
+	                	<Column/>
+	                	<Column/>
+	                	</columns>
+	                	
+	                	</Table>
+	                	
+	                	<Text text="{Duration}" />
+	   				</cells>
+	        	</ColumnListItem>        	
+	    	</items>
+	    	<columns>
+		        <Column>
+		        	<header>
+	                	<Label text="Место работы (организация, подразделение)"/>
+	              	</header>
+	            </Column>
+		        <Column>
+		        	<header>
+	                	<Label text="Профессия (должность)"/>
+	              	</header>
+	            </Column>
+	            
+	           <Column>
+	            <Table>
+		        	<headerToolbar>
+				<Toolbar>
+					<Title text="Период работы (число, месяц, год)"/>
+				</Toolbar>
+			</headerToolbar>
+		        	<items>
+		        	<ColumnListItem visible="false">
+		        	</ColumnListItem>
+		        	</items>
+		        	<columns>
+		        	<Column>
+		        	<header>
+	                	<Label text="с какого времени"/>
+	              	</header>
+	            </Column>
+	            <Column>
+		        	<header>
+	                	<Label text="по какое"/>
+	              	</header>
+	            </Column>
+		        	</columns>
+		        	</Table>
+		        	</Column> 
+	            <Column>
+		        	<header>
+	                	<Label text="Продолжительность (лет, месяцев, дней)"/>
+	              	</header>
+	            </Column>
+	    	</columns>
+	    </Table>
+	</ScrollContainer>
+</mvc:View>
